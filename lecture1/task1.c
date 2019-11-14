@@ -60,13 +60,20 @@ uint64_t factorial(uint16_t a)
 	for(i=2;i<=a;i++) res *= i;
 	return res;
 }
+int print_divided_numbers(uint16_t a)
+{
+	uint16_t i;
+	for(i=a;i<500;i+=a) printf("%u   ", i);
+	printf("\n");
+	return 0;
+}
 
 int main(void)
 {
     uint16_t a = 100;
     uint32_t b = 1234567800;
     uint64_t r,c = 12345678901234567;
-    uint32_t ret,ret2,r_height,r_weight;
+    uint32_t ret,ret2,r_height,r_weight,number;
 
     printf("   Exercise 1\n");
     ret = swap16(a);
@@ -103,6 +110,11 @@ int main(void)
 
     printf("   Exercise 5\n");
     printf(" factorial of 10:  %lu\n", factorial(10));
+
+    printf("   Exercise 6\n");
+    printf(" Input number:\n");
+    scanf("%d",&number);
+    print_divided_numbers(number);
 
     return 0;
 }
