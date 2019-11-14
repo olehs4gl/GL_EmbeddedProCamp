@@ -38,13 +38,21 @@ uint16_t rgb888to565(uint32_t a)
 	res += (a&0x00F80000) >> 8;
 	return res;
 }
+uint32_t perimeter(uint32_t a,uint32_t b)
+{
+	return 2*a+2*b;
+}
+uint32_t area(uint32_t a,uint32_t b)
+{
+	return a*b;
+}
 
 int main(void)
 {
     uint16_t a = 100;
     uint32_t b = 1234567800;
     uint64_t r,c = 12345678901234567;
-    uint32_t ret,ret2;
+    uint32_t ret,ret2,r_height,r_weight;
 
     printf("   Exercise 1\n");
     ret = swap16(a);
@@ -64,6 +72,16 @@ int main(void)
     printf("   Exercise 2\n");
     ret = rgb888to565(b);
     printf(" before: 0x%08x\n after:  0x%08x\n", b,ret);
+
+    printf("   Exercise 3\n");
+    printf(" Input rectangle height(meters):\n");
+    scanf("%d",&r_height);
+    printf(" Input rectangle weight(meters):\n");
+    scanf("%d",&r_weight);
+    ret = perimeter(r_height,r_weight);
+    printf(" rectangle perimeter(inches):  %u\n", (uint32_t)(2.54*ret));
+    ret = area(r_height,r_weight);
+    printf(" rectangle area(inches):  %u\n", (uint32_t)(2.54*2.54*ret));
 
     return 0;
 }
