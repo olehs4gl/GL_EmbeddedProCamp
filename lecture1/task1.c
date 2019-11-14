@@ -46,6 +46,14 @@ uint32_t area(uint32_t a,uint32_t b)
 {
 	return a*b;
 }
+uint32_t circle_perimeter(uint32_t a)
+{
+	return 3.14*2*a;
+}
+uint32_t circle_area(uint32_t a)
+{
+	return 3.14*a*a;
+}
 
 int main(void)
 {
@@ -82,6 +90,10 @@ int main(void)
     printf(" rectangle perimeter(inches):  %u\n", (uint32_t)(2.54*ret));
     ret = area(r_height,r_weight);
     printf(" rectangle area(inches):  %u\n", (uint32_t)(2.54*2.54*ret));
+
+    printf("   Exercise 4\n");
+    printf(" circle perimeter:  %u\n", circle_perimeter(6));
+    printf(" circle area:  %u\n", circle_area(6));
 
     return 0;
 }
