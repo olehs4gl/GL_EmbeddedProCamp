@@ -54,6 +54,12 @@ uint32_t circle_area(uint32_t a)
 {
 	return 3.14*a*a;
 }
+uint64_t factorial(uint16_t a)
+{
+	uint64_t res=1,i;
+	for(i=2;i<=a;i++) res *= i;
+	return res;
+}
 
 int main(void)
 {
@@ -94,6 +100,9 @@ int main(void)
     printf("   Exercise 4\n");
     printf(" circle perimeter:  %u\n", circle_perimeter(6));
     printf(" circle area:  %u\n", circle_area(6));
+
+    printf("   Exercise 5\n");
+    printf(" factorial of 10:  %lu\n", factorial(10));
 
     return 0;
 }
