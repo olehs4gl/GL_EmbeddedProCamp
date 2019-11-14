@@ -30,6 +30,14 @@ uint64_t swap64(uint64_t a)
 	res += (a&0xFF00000000000000) >> 56;
 	return res;
 }
+uint16_t rgb888to565(uint32_t a)
+{
+	uint32_t res;
+	res = (a&0x000000F8) >> 3;
+	res += (a&0x0000FC00) >> 5;
+	res += (a&0x00F80000) >> 8;
+	return res;
+}
 
 int main(void)
 {
@@ -38,6 +46,7 @@ int main(void)
     uint64_t r,c = 12345678901234567;
     uint32_t ret,ret2;
 
+    printf("   Exercise 1\n");
     ret = swap16(a);
     printf(" before: 0x%04x\n after:  0x%04x\n", a,ret);
 
@@ -51,6 +60,10 @@ int main(void)
     ret = r >> 32;
     ret2 = r;
     printf(" after:  0x%08x%08x\n", ret,ret2);
+
+    printf("   Exercise 2\n");
+    ret = rgb888to565(b);
+    printf(" before: 0x%08x\n after:  0x%08x\n", b,ret);
 
     return 0;
 }
