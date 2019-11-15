@@ -2,6 +2,12 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+typedef struct my_ll {
+	int number;
+	char name[16];
+	struct my_ll *next;
+} myll;
+
 int copy_digits(char *inputs,char *outputs)
 {
     uint8_t i=0,j=0;
@@ -27,9 +33,20 @@ int biggest(int *inputa, int size)
 	return bige;
 }
 
+myll *ListAdd(myll *pnext)
+{
+	myll *nem = (myll *)malloc(sizeof(myll));
+	printf("input name (max 15 charcters):\n");
+	scanf("%s",nem->name);
+	printf("input number:\n");
+	scanf("%d",&nem->number);
+	nem->next = pnext;
+	return nem;
+}
+
 int main(void)
 {
-    char istring[101], ostring[100];
+ /*   char istring[101], ostring[100];
     int size,i,*integer_array;
 
     printf("   Exercise 1\n");
@@ -49,6 +66,17 @@ int main(void)
 		scanf("%d",&integer_array[i]);
 
     printf("the biggest:\n%d\n", biggest(integer_array,size));
+    free(integer_array);
+*/
+    printf("   Exercise 3\n");
+
+	myll *pml,*pm2;
+	pml = ListAdd(NULL);
+	pm2 = ListAdd(pml);
+	printf("%s   %d   %p\n",pml->name,pml->number,pml->next);
+	printf("%s   %d   %p\n",pm2->name,pm2->number,pm2->next);
+	free(pm2);
+	free(pml);
 
     return 0;
 }
