@@ -44,6 +44,17 @@ myll *ListAdd(myll *pnext)
 	return nem;
 }
 
+int *ListLs(myll *pnext)
+{
+	myll *pn = pnext;
+	while(pn != NULL)
+	{
+		printf("%s   %d\n",pn->name,pn->number);
+		pn = pn->next;
+	}
+	return 0;
+}
+
 int main(void)
 {
  /*   char istring[101], ostring[100];
@@ -73,8 +84,7 @@ int main(void)
 	myll *pml,*pm2;
 	pml = ListAdd(NULL);
 	pm2 = ListAdd(pml);
-	printf("%s   %d   %p\n",pml->name,pml->number,pml->next);
-	printf("%s   %d   %p\n",pm2->name,pm2->number,pm2->next);
+	ListLs(pm2);
 	free(pm2);
 	free(pml);
 
