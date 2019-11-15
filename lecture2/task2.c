@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 int copy_digits(char *inputs,char *outputs)
 {
@@ -16,9 +17,20 @@ int copy_digits(char *inputs,char *outputs)
 	return 0;
 }
 
+int biggest(int *inputa, int size)
+{
+    int bige = inputa[0];
+    for(int i = 1;i<size;i++)
+    {
+		if(bige < inputa[i]) bige = inputa[i];
+	}
+	return bige;
+}
+
 int main(void)
 {
     char istring[101], ostring[100];
+    int size,i,*integer_array;
 
     printf("   Exercise 1\n");
     printf(" Input string (100 characters maximum!):\n");
@@ -26,6 +38,17 @@ int main(void)
     printf(" Output string:\n");
     copy_digits(istring,ostring);
     printf("%s\n",ostring);
+
+    printf("   Exercise 2\n");
+    printf(" Input array size:\n");
+    scanf("%d",&size);
+    integer_array = (int *)malloc(size);
+    
+    printf(" Input %d integer digits:\n",size);
+    for(i=0;i<size;i++)
+		scanf("%d",&integer_array[i]);
+
+    printf("the biggest:\n%d\n", biggest(integer_array,size));
 
     return 0;
 }
