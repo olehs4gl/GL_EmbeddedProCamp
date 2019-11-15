@@ -10,7 +10,7 @@ typedef struct my_ll {
 
 int copy_digits(char *inputs,char *outputs)
 {
-    uint8_t i=0,j=0;
+	uint8_t i=0,j=0;
 	while(inputs[i])
 	{
 		if((inputs[i] >= '0')&&(inputs[i] <= '9'))
@@ -25,9 +25,9 @@ int copy_digits(char *inputs,char *outputs)
 
 int biggest(int *inputa, int size)
 {
-    int bige = inputa[0];
-    for(int i = 1;i<size;i++)
-    {
+	int bige = inputa[0];
+	for(int i = 1;i<size;i++)
+	{
 		if(bige < inputa[i]) bige = inputa[i];
 	}
 	return bige;
@@ -55,38 +55,50 @@ int *ListLs(myll *pnext)
 	return 0;
 }
 
+int *ListRemove(myll *pn)
+{
+	if(pn->next != NULL)
+	{
+		ListRemove(pn->next);
+		free(pn);
+	}
+	return 0;
+}
+
 int main(void)
 {
- /*   char istring[101], ostring[100];
-    int size,i,*integer_array;
+	char istring[101], ostring[100];
+	int size,i,*integer_array;
 
-    printf("   Exercise 1\n");
-    printf(" Input string (100 characters maximum!):\n");
-    gets(istring);
-    printf(" Output string:\n");
-    copy_digits(istring,ostring);
-    printf("%s\n",ostring);
+	printf("   Exercise 1\n");
+	printf(" Input string (100 characters maximum!):\n");
+	gets(istring);
+	printf(" Output string:\n");
+	copy_digits(istring,ostring);
+	printf("%s\n",ostring);
 
-    printf("   Exercise 2\n");
-    printf(" Input array size:\n");
-    scanf("%d",&size);
-    integer_array = (int *)malloc(size);
-    
-    printf(" Input %d integer digits:\n",size);
-    for(i=0;i<size;i++)
+	printf("   Exercise 2\n");
+	printf(" Input array size:\n");
+	scanf("%d",&size);
+	integer_array = (int *)malloc(size*sizeof(int));
+
+	printf(" Input %d integer digits:\n",size);
+	for(i=0;i<size;i++)
 		scanf("%d",&integer_array[i]);
 
-    printf("the biggest:\n%d\n", biggest(integer_array,size));
-    free(integer_array);
-*/
-    printf("   Exercise 3\n");
+	printf("the biggest:\n%d\n", biggest(integer_array,size));
+	free(integer_array);
 
-	myll *pml,*pm2;
+	printf("   Exercise 3\n");
+	printf("(test example is made for 4 records of (name, number))\n");
+
+	myll *pml;
 	pml = ListAdd(NULL);
-	pm2 = ListAdd(pml);
-	ListLs(pm2);
-	free(pm2);
-	free(pml);
+	pml = ListAdd(pml);
+	pml = ListAdd(pml);
+	pml = ListAdd(pml);
+	ListLs(pml);
+	ListRemove(pml);
 
-    return 0;
+	return 0;
 }
