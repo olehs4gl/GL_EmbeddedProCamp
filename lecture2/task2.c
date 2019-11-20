@@ -2,68 +2,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-typedef struct my_ll {
-	int number;
-	char name[16];
-	struct my_ll *next;
-} myll;
-
-int copy_digits(char *inputs,char *outputs)
-{
-	uint8_t i=0,j=0;
-	while(inputs[i])
-	{
-		if((inputs[i] >= '0')&&(inputs[i] <= '9'))
-		{
-			outputs[j++] = inputs[i];
-		}
-		i++;
-	}
-	outputs[j] = 0;
-	return 0;
-}
-
-int biggest(int *inputa, int size)
-{
-	int bige = inputa[0];
-	for(int i = 1;i<size;i++)
-	{
-		if(bige < inputa[i]) bige = inputa[i];
-	}
-	return bige;
-}
-
-myll *ListAdd(myll *pnext)
-{
-	myll *nem = (myll *)malloc(sizeof(myll));
-	printf("input name (max 15 charcters):\n");
-	scanf("%s",nem->name);
-	printf("input number:\n");
-	scanf("%d",&nem->number);
-	nem->next = pnext;
-	return nem;
-}
-
-int *ListLs(myll *pnext)
-{
-	myll *pn = pnext;
-	while(pn != NULL)
-	{
-		printf("%s   %d\n",pn->name,pn->number);
-		pn = pn->next;
-	}
-	return 0;
-}
-
-int *ListRemove(myll *pn)
-{
-	if(pn->next != NULL)
-	{
-		ListRemove(pn->next);
-		free(pn);
-	}
-	return 0;
-}
+#include "task2.h"
 
 int main(void)
 {
@@ -90,15 +29,21 @@ int main(void)
 	free(integer_array);
 
 	printf("   Exercise 3\n");
-	printf("(test example is made for 4 records of (name, number))\n");
+	printf("(test example is made for 5 records of (name, number))\n");
 
-	myll *pml;
+	myll *pml,*prtr;
 	pml = ListAdd(NULL);
 	pml = ListAdd(pml);
 	pml = ListAdd(pml);
+	prtr = pml;
 	pml = ListAdd(pml);
+	pml = ListAdd(pml);
+	printf("all list:\n");
 	ListLs(pml);
-	ListRemove(pml);
+	ListRemove(pml,prtr);
+	printf("list after removed third record:\n");
+	ListLs(pml);
+	ListRemoveAll(pml);
 
 	return 0;
 }
