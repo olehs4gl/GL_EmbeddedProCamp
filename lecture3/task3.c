@@ -87,3 +87,10 @@ int GetQueue(int *p_element)
 
 	return 1;
 }
+
+int ReadQueue(int *p_element)
+{
+	if(os_size == 0)return 0;
+	*p_element = *pb_queue;
+	return 1;
+}

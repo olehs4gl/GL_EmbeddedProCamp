@@ -116,6 +116,9 @@ int main(void)
 	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
 	else{printf("  Cannot get digit from queue!\n");}
 
+	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
+	else{printf("  Cannot read digit from queue!\n");}
+
 	if(PutQueue(5550) == 1){printf("  Put 5550 in queue\n");}
 	else{printf("  Cannot put 5550 in queue!\n");}
 
@@ -127,6 +130,9 @@ int main(void)
 
 	if(PutQueue(-100) == 1){printf("  Put -100 in queue\n");}
 	else{printf("  Cannot put -100 in queue!\n");}
+
+	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
+	else{printf("  Cannot read digit from queue!\n");}
 
 	if(PutQueue(100) == 1){printf("  Put 100 in queue\n");}
 	else{printf("  Cannot put 100 in queue!\n");}
@@ -140,6 +146,9 @@ int main(void)
 	if(PutQueue(222) == 1){printf("  Put 222 in queue\n");}
 	else{printf("  Cannot put 222 in queue!\n");}
 
+	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
+	else{printf("  Cannot read digit from queue!\n");}
+
 	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
 	else{printf("  Cannot get digit from queue!\n");}
 
@@ -148,6 +157,12 @@ int main(void)
 
 	if(PutQueue(0) == 1){printf("  Put 0 in queue\n");}
 	else{printf("  Cannot put 0 in queue!\n");}
+
+	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
+	else{printf("  Cannot read digit from queue!\n");}
+
+	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
+	else{printf("  Cannot read digit from queue!\n");}
 
 	if(PutQueue(-57) == 1){printf("  Put -57 in queue\n");}
 	else{printf("  Cannot put -57 in queue!\n");}
@@ -160,6 +175,15 @@ int main(void)
 
 	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
 	else{printf("  Cannot get digit from queue!\n");}
+
+	if(PutQueue(9) == 1){printf("  Put 9 in queue\n");}
+	else{printf("  Cannot put 9 in queue!\n");}
+
+	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
+	else{printf("  Cannot read digit from queue!\n");}
+
+	if(PutQueue(1110) == 1){printf("  Put 1110 in queue\n");}
+	else{printf("  Cannot put 1110 in queue!\n");}
 
 	return 0;
 }
