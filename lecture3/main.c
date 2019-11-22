@@ -4,7 +4,7 @@ int main(void)
 {
 	char istring[101], ostring[100];
 	int digit;
-
+/*
 	printf("   Exercise 1\n");
 	printf(" Input string (100 characters maximum!):\n");
 	gets(istring);
@@ -99,8 +99,11 @@ int main(void)
 	{
 		printf("  Cannot read digit from stack!\n");
 	}
-
+*/
 	printf("   Exercise 3\n");
+	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
+	else{printf("  Cannot get digit from queue!\n");}
+
 	if(PutQueue(100) == 1){printf("  Put 100 in queue\n");}
 	else{printf("  Cannot put digit in queue!\n");}
 
@@ -110,11 +113,17 @@ int main(void)
 	if(PutQueue(1235) == 1){printf("  Put 1235 in queue\n");}
 	else{printf("  Cannot put 1235 in queue!\n");}
 
+	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
+	else{printf("  Cannot get digit from queue!\n");}
+
 	if(PutQueue(5550) == 1){printf("  Put 5550 in queue\n");}
 	else{printf("  Cannot put 5550 in queue!\n");}
 
 	if(PutQueue(10) == 1){printf("  Put 10 in queue\n");}
 	else{printf("  Cannot put 10 in queue!\n");}
+
+	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
+	else{printf("  Cannot get digit from queue!\n");}
 
 	if(PutQueue(-100) == 1){printf("  Put -100 in queue\n");}
 	else{printf("  Cannot put -100 in queue!\n");}
@@ -131,6 +140,9 @@ int main(void)
 	if(PutQueue(222) == 1){printf("  Put 222 in queue\n");}
 	else{printf("  Cannot put 222 in queue!\n");}
 
+	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
+	else{printf("  Cannot get digit from queue!\n");}
+
 	if(PutQueue(321) == 1){printf("  Put 321 in queue\n");}
 	else{printf("  Cannot put 321 in queue!\n");}
 
@@ -145,6 +157,9 @@ int main(void)
 
 	if(PutQueue(202) == 1){printf("  Put 202 in queue\n");}
 	else{printf("  Cannot put 202 in queue!\n");}
+
+	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
+	else{printf("  Cannot get digit from queue!\n");}
 
 	return 0;
 }

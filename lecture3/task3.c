@@ -71,3 +71,19 @@ int PutQueue(int element)
 
 	return 1;
 }
+
+int GetQueue(int *p_element)
+{
+	if(os_size == 0)return 0;
+
+	if((pb_queue - os_queue) >= queue_size)
+	{
+		pb_queue = os_queue;
+	}
+
+	*p_element = *pb_queue;
+	pb_queue++;
+	os_size--;
+
+	return 1;
+}
