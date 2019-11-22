@@ -94,3 +94,9 @@ int ReadQueue(int *p_element)
 	*p_element = *pb_queue;
 	return 1;
 }
+
+
+int CopyRead(int (*PointerReadQueue)(int*),int *copy_element)
+{
+     return PointerReadQueue(copy_element);
+}

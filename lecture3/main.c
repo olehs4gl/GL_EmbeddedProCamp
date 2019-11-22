@@ -4,7 +4,7 @@ int main(void)
 {
 	char istring[101], ostring[100];
 	int digit;
-/*
+
 	printf("   Exercise 1\n");
 	printf(" Input string (100 characters maximum!):\n");
 	gets(istring);
@@ -99,7 +99,7 @@ int main(void)
 	{
 		printf("  Cannot read digit from stack!\n");
 	}
-*/
+
 	printf("   Exercise 3\n");
 	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
 	else{printf("  Cannot get digit from queue!\n");}
@@ -184,6 +184,10 @@ int main(void)
 
 	if(PutQueue(1110) == 1){printf("  Put 1110 in queue\n");}
 	else{printf("  Cannot put 1110 in queue!\n");}
+
+	printf("   Exercise 4\n");
+	if(CopyRead(ReadQueue,&digit) == 1){printf("  Read %d from queue\n",digit);}
+	else{printf("  Cannot read digit from queue!\n");}
 
 	return 0;
 }

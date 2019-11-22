@@ -22,3 +22,6 @@ int GetQueue(int*);
 
 //task3 exercise 3 c
 int ReadQueue(int*);
+
+//task3 exercise 4
+int CopyRead(int (*)(int*),int*);
