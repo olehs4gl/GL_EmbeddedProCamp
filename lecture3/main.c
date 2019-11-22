@@ -41,6 +41,40 @@ int main(void)
 	{
 		printf("  Cannot push third digit in stack!\n");
 	}
+	digit = 0;
+
+	if(Pop(&digit) == 1)
+	{
+		printf("  Last digit retrieved from stack is  %d\n",digit);
+	}
+	else
+	{
+		printf("  Cannot pop digit from stack!\n");
+	}
+	if(Pop(&digit) == 1)
+	{
+		printf("  Last digit retrieved from stack is  %d\n",digit);
+	}
+	else
+	{
+		printf("  Cannot pop digit from stack!\n");
+	}
+	if(Pop(&digit) == 1)
+	{
+		printf("  Last digit retrieved from stack is  %d\n",digit);
+	}
+	else
+	{
+		printf("  Cannot pop digit from stack!\n");
+	}
+	if(Pop(&digit) == 1)
+	{
+		printf("  Last digit retrieved from stack is  %d\n",digit);
+	}
+	else
+	{
+		printf("  Cannot pop digit from stack!\n");
+	}
 
 	return 0;
 }

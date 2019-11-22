@@ -23,3 +23,15 @@ int Push(int new_element)
 	my_stack = p_new_element;
 	return 1;
 }
+
+//retrieve last element from my STACK
+//if successful returns nonzero, otherwise return zero
+int Pop(int *last_element)
+{
+	if(my_stack == NULL)return 0;
+	*last_element = my_stack->number;
+	os_stack *p = my_stack->next;
+	free(my_stack);
+	my_stack = p;
+	return 1;
+}
