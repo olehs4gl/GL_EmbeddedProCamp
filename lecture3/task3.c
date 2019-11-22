@@ -10,6 +10,11 @@ void copy_string(char *inputs,char *outputs)
 	while(outputs[i] = inputs[i])i++;
 }
 
+typedef struct os_stack {
+	int number;
+	struct os_stack *next;
+} os_stack;
+
 os_stack *my_stack = NULL;
 
 //allocates new element in memory (STACK)
@@ -45,3 +50,24 @@ int Read(int *last_element)
 	return 1;
 }
 
+int os_queue[queue_size];
+int os_size = 0;
+//pb_queue - pointer to the begin of my queue
+//pe_queue - pointer to the end of my queue
+int *pb_queue=os_queue, *pe_queue=os_queue;
+
+int PutQueue(int element)
+{
+	if(os_size >= queue_size){return 0;}
+
+	if((pe_queue - os_queue) >= queue_size)
+	{
+		pe_queue = os_queue;
+	}
+
+	*pe_queue = element;
+	pe_queue++;
+	os_size++;
+
+	return 1;
+}

@@ -41,7 +41,7 @@ int main(void)
 	{
 		printf("  Cannot push third digit in stack!\n");
 	}
-	digit = 0;
+
 
 	if(Pop(&digit) == 1)
 	{
@@ -99,6 +99,52 @@ int main(void)
 	{
 		printf("  Cannot read digit from stack!\n");
 	}
+
+	printf("   Exercise 3\n");
+	if(PutQueue(100) == 1){printf("  Put 100 in queue\n");}
+	else{printf("  Cannot put digit in queue!\n");}
+
+	if(PutQueue(309) == 1){printf("  Put 309 in queue\n");}
+	else{printf("  Cannot put 309 in queue!\n");}
+
+	if(PutQueue(1235) == 1){printf("  Put 1235 in queue\n");}
+	else{printf("  Cannot put 1235 in queue!\n");}
+
+	if(PutQueue(5550) == 1){printf("  Put 5550 in queue\n");}
+	else{printf("  Cannot put 5550 in queue!\n");}
+
+	if(PutQueue(10) == 1){printf("  Put 10 in queue\n");}
+	else{printf("  Cannot put 10 in queue!\n");}
+
+	if(PutQueue(-100) == 1){printf("  Put -100 in queue\n");}
+	else{printf("  Cannot put -100 in queue!\n");}
+
+	if(PutQueue(100) == 1){printf("  Put 100 in queue\n");}
+	else{printf("  Cannot put 100 in queue!\n");}
+
+	if(PutQueue(300) == 1){printf("  Put 300 in queue\n");}
+	else{printf("  Cannot put 300 in queue!\n");}
+
+	if(PutQueue(880) == 1){printf("  Put 880 in queue\n");}
+	else{printf("  Cannot put 880 in queue!\n");}
+
+	if(PutQueue(222) == 1){printf("  Put 222 in queue\n");}
+	else{printf("  Cannot put 222 in queue!\n");}
+
+	if(PutQueue(321) == 1){printf("  Put 321 in queue\n");}
+	else{printf("  Cannot put 321 in queue!\n");}
+
+	if(PutQueue(0) == 1){printf("  Put 0 in queue\n");}
+	else{printf("  Cannot put 0 in queue!\n");}
+
+	if(PutQueue(-57) == 1){printf("  Put -57 in queue\n");}
+	else{printf("  Cannot put -57 in queue!\n");}
+
+	if(PutQueue(900) == 1){printf("  Put 900 in queue\n");}
+	else{printf("  Cannot put 900 in queue!\n");}
+
+	if(PutQueue(202) == 1){printf("  Put 202 in queue\n");}
+	else{printf("  Cannot put 202 in queue!\n");}
 
 	return 0;
 }
