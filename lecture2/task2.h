@@ -5,74 +5,16 @@ typedef struct my_ll {
 	struct my_ll *next;
 } myll;
 
-void copy_digits(char *inputs,char *outputs)
-{
-	uint8_t i=0,j=0;
-	while(inputs[i])
-	{
-		if((inputs[i] >= '0')&&(inputs[i] <= '9'))
-		{
-			outputs[j++] = inputs[i];
-		}
-		i++;
-	}
-	outputs[j] = 0;
-}
+void copy_digits(char* ,char*);
 
-int biggest(int *inputa, int size)
-{
-	int biggest_ = inputa[0];
-	for(int i = 1;i<size;i++)
-	{
-		if(biggest_ < inputa[i]) biggest_ = inputa[i];
-	}
-	return biggest_;
-}
+int biggest(int* , int);
 
-myll *ListAdd(myll *pnext)
-{
-	myll *nem = (myll *)malloc(sizeof(myll));
-	printf("input name (max 15 charcters):\n");
-	scanf("%s",nem->name);
-	printf("input number:\n");
-	scanf("%d",&nem->number);
-	nem->next = pnext;
-	return nem;
-}
+myll *ListAdd(myll*);
 
-void ListLs(myll *pstart)
-{
-	myll *pn = pstart;
-	while(pn != NULL)
-	{
-		printf("%s   %d\n",pn->name,pn->number);
-		pn = pn->next;
-	}
-}
+void ListLs(myll*);
 
-//remove all records starting from 'pn' from list
-void ListRemoveAll(myll *pn)
-{
-	if(pn->next != NULL)
-	{
-		ListRemoveAll(pn->next);
-		free(pn);
-	}
-}
+//remove all records from list
+void ListRemoveAll(myll*);
 
-//remove record 'premove' from list
-//return 0 when record was removed or 1 when didn't find the record
-int ListRemove(myll *pn,myll *premove)
-{
-	if(pn->next != NULL)
-	{
-		if(pn->next == premove)
-		{
-			pn->next = premove->next;
-			free(premove);
-			return 0;
-		}
-		return ListRemove(pn->next, premove);
-	}
-	return 1;
-}
+//remove one record from list
+int ListRemove(myll*, myll*);
