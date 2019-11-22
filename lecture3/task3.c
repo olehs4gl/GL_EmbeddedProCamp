@@ -35,3 +35,13 @@ int Pop(int *last_element)
 	my_stack = p;
 	return 1;
 }
+
+//read last element from my STACK
+//if successful returns nonzero, otherwise return zero
+int Read(int *last_element)
+{
+	if(my_stack == NULL)return 0;
+	*last_element = my_stack->number;
+	return 1;
+}
+

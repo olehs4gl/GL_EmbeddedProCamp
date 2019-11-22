@@ -59,6 +59,14 @@ int main(void)
 	{
 		printf("  Cannot pop digit from stack!\n");
 	}
+	if(Read(&digit) == 1)
+	{
+		printf("  Last digit in stack is  %d\n",digit);
+	}
+	else
+	{
+		printf("  Cannot read digit from stack!\n");
+	}
 	if(Pop(&digit) == 1)
 	{
 		printf("  Last digit retrieved from stack is  %d\n",digit);
@@ -67,6 +75,14 @@ int main(void)
 	{
 		printf("  Cannot pop digit from stack!\n");
 	}
+	if(Read(&digit) == 1)
+	{
+		printf("  Last digit in stack is  %d\n",digit);
+	}
+	else
+	{
+		printf("  Cannot read digit from stack!\n");
+	}
 	if(Pop(&digit) == 1)
 	{
 		printf("  Last digit retrieved from stack is  %d\n",digit);
@@ -74,6 +90,14 @@ int main(void)
 	else
 	{
 		printf("  Cannot pop digit from stack!\n");
+	}
+	if(Read(&digit) == 1)
+	{
+		printf("  Last digit in stack is  %d\n",digit);
+	}
+	else
+	{
+		printf("  Cannot read digit from stack!\n");
 	}
 
 	return 0;
