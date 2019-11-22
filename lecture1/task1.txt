@@ -1,0 +1,15 @@
+Read code style doc: https://www.kernel.org/doc/html/v4.10/process/coding-style.html
+Create account on GitHub if it still not exist
+Create GL_EmbeddedProCamp repository on GitHub
+Create lecture1 branch
+Create folder lecture1 in the repository 
+Execute excersises (see next slide)
+Push it to GitHub and perform “Pull request” on master branch
+
+Make following exercises:
+Ex1: Write swap16,  swap32, swap64 functions that swap, bytes in uint16_t, unit32_t, and uint64_t functions.
+Ex2: Write function that converts RGB 888 to RGB 565.
+Ex3: Write program that get from user height and weight of rectangle (in meters) and calculate perimeter and area (in inches);
+Ex4: Write a C program to compute the perimeter and area of a circle with a radius of 6 meters;
+Ex5: Write a C program to compute factorial of 10 
+Ex6: Write a C program to print all numbers between 1 to 500 which divided by a number specified by user;

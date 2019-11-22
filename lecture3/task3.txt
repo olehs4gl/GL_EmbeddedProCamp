@@ -1,0 +1,14 @@
+
+Create void function that copies one string to another. 
+
+Create stack library based on linked list:
+int Push(int);	// add element
+int Pop(*int);	// read element and remove from stack
+int Read(*int);	// read element without removing it from stack
+
+Create queue library based on array:
+int Put(int);	// add element
+int Get(*int);	// read element and remove from queue
+Int Read(*int);	// read element without removing it from stack
+
+Create function, that receives pointer to other function as a parameter
