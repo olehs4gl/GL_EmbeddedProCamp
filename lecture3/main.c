@@ -1,9 +1,15 @@
-#include "task3.c"
+#include <stdio.h>
+
+#include "task3_1.h"
+#include "task3_2.h"
+#include "task3_3.h"
+#include "task3_4.h"
 
 int main(void)
 {
 	char istring[101], ostring[100];
 	int digit;
+	char my_char;
 
 	printf("   Exercise 1\n");
 	printf(" Input string (100 characters maximum!):\n");
@@ -13,181 +19,120 @@ int main(void)
 	printf("%s\n",ostring);
 
 	printf("   Exercise 2\n");
-	printf(" Input 3 digits to push in stack:\n");
-	printf("input first digit: ");scanf("%d",&digit);
-	if(Push(digit) == 1)
-	{
-		printf("  First digit is in stack!\n");
-	}
-	else
-	{
-		printf("  Cannot push first digit in stack!\n");
-	}
-	printf("input second digit: ");scanf("%d",&digit);
-	if(Push(digit) == 1)
-	{
-		printf("  Second digit is in stack!\n");
-	}
-	else
-	{
-		printf("  Cannot push second digit in stack!\n");
-	}
-	printf("input third digit: ");scanf("%d",&digit);
-	if(Push(digit) == 1)
-	{
-		printf("  Third digit is in stack!\n");
-	}
-	else
-	{
-		printf("  Cannot push third digit in stack!\n");
-	}
+	printf("   to push element into stack press 'p'\n");
+	printf("   to pop element from stack press 'g'\n");
+	printf("   to read element from stack press 'r'\n");
+	printf("   to list full stack press 'l'\n");
+	printf("   to quit from Exercise 2 press 'q'\n");
+	do{
+		my_char = getchar();
+		if(my_char == 'p')
+		{
+			printf("input digit to push into stack: ");scanf("%d",&digit);
+			if(Push(digit) == 1)
+			{
+				printf("  Digit %d is pushed into stack!\n",digit);
+			}
+			else
+			{
+				printf("  Cannot push digit in stack!\n");
+			}
+		}
+		else if(my_char == 'g')
+		{
+			if(Pop(&digit) == 1)
+			{
+				printf("  Pop %d from stack\n",digit);
+			}
+			else
+			{
+				printf("  Cannot pop digit from stack!\n");
+			}
+		}
+		else if(my_char == 'r')
+		{
+			if(Read(&digit) == 1)
+			{
+				printf("  Read %d from stack\n",digit);
+			}
+			else
+			{
+				printf("  Cannot read digit from stack!\n");
+			}
+		}
+		else if(my_char == 'l')
+		{
+			int i=1;
+			while(PrintStack(&digit,i++) != 0)
+			{
+				printf("%d\n",digit);
+			}
+		}
+	}while(my_char != 'q');
 
-
-	if(Pop(&digit) == 1)
-	{
-		printf("  Last digit retrieved from stack is  %d\n",digit);
-	}
-	else
-	{
-		printf("  Cannot pop digit from stack!\n");
-	}
-	if(Pop(&digit) == 1)
-	{
-		printf("  Last digit retrieved from stack is  %d\n",digit);
-	}
-	else
-	{
-		printf("  Cannot pop digit from stack!\n");
-	}
-	if(Read(&digit) == 1)
-	{
-		printf("  Last digit in stack is  %d\n",digit);
-	}
-	else
-	{
-		printf("  Cannot read digit from stack!\n");
-	}
-	if(Pop(&digit) == 1)
-	{
-		printf("  Last digit retrieved from stack is  %d\n",digit);
-	}
-	else
-	{
-		printf("  Cannot pop digit from stack!\n");
-	}
-	if(Read(&digit) == 1)
-	{
-		printf("  Last digit in stack is  %d\n",digit);
-	}
-	else
-	{
-		printf("  Cannot read digit from stack!\n");
-	}
-	if(Pop(&digit) == 1)
-	{
-		printf("  Last digit retrieved from stack is  %d\n",digit);
-	}
-	else
-	{
-		printf("  Cannot pop digit from stack!\n");
-	}
-	if(Read(&digit) == 1)
-	{
-		printf("  Last digit in stack is  %d\n",digit);
-	}
-	else
-	{
-		printf("  Cannot read digit from stack!\n");
-	}
 
 	printf("   Exercise 3\n");
-	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
-	else{printf("  Cannot get digit from queue!\n");}
+	printf("   to put element into queue press 'p'\n");
+	printf("   to get element from queue press 'g'\n");
+	printf("   to read element from queue press 'r'\n");
+	printf("   to list full queue press 'l'\n");
+	printf("   to quit from Exercise 3 press 'q'\n");
+	do{
+		my_char = getchar();
+		if(my_char == 'p')
+		{
+			printf("input digit to put into queue: ");scanf("%d",&digit);
+			if(PutQueue(digit) == 1)
+			{
+				printf("  Digit %d puts into queue\n",digit);
+			}
+			else
+			{
+				printf("  Cannot put digit into queue!\n");
+			}
+		}
+		else if(my_char == 'g')
+		{
+			if(GetQueue(&digit) == 1)
+			{
+				printf("  Get %d from queue\n",digit);
+			}
+			else
+			{
+				printf("  Cannot get digit from queue!\n");
+			}
+		}
+		else if(my_char == 'r')
+		{
+			if(ReadQueue(&digit) == 1)
+			{
+				printf("  Read %d from queue\n",digit);
+			}
+			else
+			{
+				printf("  Cannot read digit from queue!\n");
+			}
+		}
+		else if(my_char == 'l')
+		{
+			int i=1;
+			while(PrintQueue(&digit,i++) != 0)
+			{
+				printf("%d\n",digit);
+			}
+		}
+	}while(my_char != 'q');
 
-	if(PutQueue(100) == 1){printf("  Put 100 in queue\n");}
-	else{printf("  Cannot put digit in queue!\n");}
-
-	if(PutQueue(309) == 1){printf("  Put 309 in queue\n");}
-	else{printf("  Cannot put 309 in queue!\n");}
-
-	if(PutQueue(1235) == 1){printf("  Put 1235 in queue\n");}
-	else{printf("  Cannot put 1235 in queue!\n");}
-
-	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
-	else{printf("  Cannot get digit from queue!\n");}
-
-	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
-	else{printf("  Cannot read digit from queue!\n");}
-
-	if(PutQueue(5550) == 1){printf("  Put 5550 in queue\n");}
-	else{printf("  Cannot put 5550 in queue!\n");}
-
-	if(PutQueue(10) == 1){printf("  Put 10 in queue\n");}
-	else{printf("  Cannot put 10 in queue!\n");}
-
-	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
-	else{printf("  Cannot get digit from queue!\n");}
-
-	if(PutQueue(-100) == 1){printf("  Put -100 in queue\n");}
-	else{printf("  Cannot put -100 in queue!\n");}
-
-	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
-	else{printf("  Cannot read digit from queue!\n");}
-
-	if(PutQueue(100) == 1){printf("  Put 100 in queue\n");}
-	else{printf("  Cannot put 100 in queue!\n");}
-
-	if(PutQueue(300) == 1){printf("  Put 300 in queue\n");}
-	else{printf("  Cannot put 300 in queue!\n");}
-
-	if(PutQueue(880) == 1){printf("  Put 880 in queue\n");}
-	else{printf("  Cannot put 880 in queue!\n");}
-
-	if(PutQueue(222) == 1){printf("  Put 222 in queue\n");}
-	else{printf("  Cannot put 222 in queue!\n");}
-
-	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
-	else{printf("  Cannot read digit from queue!\n");}
-
-	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
-	else{printf("  Cannot get digit from queue!\n");}
-
-	if(PutQueue(321) == 1){printf("  Put 321 in queue\n");}
-	else{printf("  Cannot put 321 in queue!\n");}
-
-	if(PutQueue(0) == 1){printf("  Put 0 in queue\n");}
-	else{printf("  Cannot put 0 in queue!\n");}
-
-	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
-	else{printf("  Cannot read digit from queue!\n");}
-
-	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
-	else{printf("  Cannot read digit from queue!\n");}
-
-	if(PutQueue(-57) == 1){printf("  Put -57 in queue\n");}
-	else{printf("  Cannot put -57 in queue!\n");}
-
-	if(PutQueue(900) == 1){printf("  Put 900 in queue\n");}
-	else{printf("  Cannot put 900 in queue!\n");}
-
-	if(PutQueue(202) == 1){printf("  Put 202 in queue\n");}
-	else{printf("  Cannot put 202 in queue!\n");}
-
-	if(GetQueue(&digit) == 1){printf("  Get %d from queue\n",digit);}
-	else{printf("  Cannot get digit from queue!\n");}
-
-	if(PutQueue(9) == 1){printf("  Put 9 in queue\n");}
-	else{printf("  Cannot put 9 in queue!\n");}
-
-	if(ReadQueue(&digit) == 1){printf("  Read %d from queue\n",digit);}
-	else{printf("  Cannot read digit from queue!\n");}
-
-	if(PutQueue(1110) == 1){printf("  Put 1110 in queue\n");}
-	else{printf("  Cannot put 1110 in queue!\n");}
 
 	printf("   Exercise 4\n");
-	if(CopyRead(ReadQueue,&digit) == 1){printf("  Read %d from queue\n",digit);}
-	else{printf("  Cannot read digit from queue!\n");}
+	if(CopyRead(ReadQueue,&digit) == 1)
+	{
+		printf("  Read %d from queue\n",digit);
+	}
+	else
+	{
+		printf("  Cannot read digit from queue!\n");
+	}
 
 	return 0;
 }
