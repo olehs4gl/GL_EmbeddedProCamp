@@ -1,0 +1,3 @@
+os_gpio.c:11:6:timer_init	4	static
+os_gpio.c:27:6:gpio_init	8	static
+os_gpio.c:36:6:gpio_blink	4	static
