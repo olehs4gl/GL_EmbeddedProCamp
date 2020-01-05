@@ -1,7 +1,0 @@
-os_usart.c:6:6:usart_init	4	static
-os_usart.c:21:5:usart_read	16	static
-os_usart.c:31:5:usart_write	16	static
-os_usart.c:42:6:usart_open	4	static
-os_usart.c:47:6:usart_close	4	static
-os_usart.c:52:6:usart_deinit	4	static
-os_usart.c:63:6:usart_loop	16	static
