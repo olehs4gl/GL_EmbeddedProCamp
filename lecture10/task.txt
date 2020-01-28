@@ -1,0 +1,4 @@
+
+Create project to demonstrate static memory allocation.
+Create project to demonstrate dynamic memory allocation.
+(do it with  Tracealyzer)
